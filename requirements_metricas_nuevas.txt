@@ -1,0 +1,23 @@
+# Dependencias de audio_utils.py y de las metricas nuevas (WavLM, U3D, WER).
+# Versiones del entorno de desarrollo: Python 3.11 (torch==2.1.0 no tiene
+# versiones para Python 3.12 o superior).
+#
+# En Linux, instalar antes torch y torchaudio desde el indice CPU para evitar
+# descargar librerias de GPU:
+#   pip install torch==2.1.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cpu
+
+torch==2.1.0
+torchaudio==2.1.0
+numpy<2                  # torch 2.1.0 no es compatible con NumPy 2.x
+setuptools<81            # librosa 0.9.2 necesita pkg_resources
+librosa==0.9.2
+speechbrain==1.0.0
+huggingface_hub<1.0      # speechbrain 1.0.0 usa una API retirada en huggingface_hub 1.x
+transformers==4.36.2     # versiones recientes exigen torch>=2.5
+soundfile
+scikit-learn
+scipy
+pandas
+matplotlib
+openai-whisper
+jiwer>=3.0               # la API usa reference_transform (antes truth_transform)
