@@ -12,6 +12,25 @@ It is designed for:
 * responsible development of personalized artificial voices.
 
 ---
+## Organización actual de la evaluación
+
+Los scripts de evaluación están en `scripts/evaluacion/` y se ejecutan desde la raíz
+del repositorio sobre los audios de `data/raw/`. La estructura descrita más abajo en
+este archivo corresponde a la versión heredada.
+
+| Dimensión | Script | Estado |
+|---|---|---|
+| Identidad (ECAPA-TDNN) | `calcular_eer_general.py` | Heredado |
+| Distorsión espectral | `calcular_mcd.py` | Heredado |
+| Calidad general | `calcular_mos_nisqa.py` | Heredado |
+| Identidad (WavLM) | `metrica_identidad_wavlm.py` | Nuevo |
+| Ritmo (U3D) | `metrica_prosodia_u3d.py` | Nuevo |
+| Inteligibilidad (WER) | `metrica_inteligibilidad_wer.py` | Nuevo |
+
+Las métricas nuevas tienen funciones reutilizables, instalación y ejemplos en
+[docs/GUIA_METRICAS_NUEVAS.md](docs/GUIA_METRICAS_NUEVAS.md). Sus dependencias están
+en `requirements_metricas_nuevas.txt`.
+
 
 ## Project goals
 
